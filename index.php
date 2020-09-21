@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Blackjack</title>
-    <link rel="stylesheet" href="blackjack.css" />
+    <link rel="stylesheet" type="text/css" href="blackjack.css" />
 </head>
 <body>
 
@@ -56,21 +56,16 @@
         </div>
         <div>
             <h4>Player 2</h4>
-            <p>
-                <?php
+            <p><?php
                 echo $player2[0][2] . $player2[0][0] . ' ' . $player2[1][2] . $player2[1][0];
-                ?>
-            </p>
-            <h3>
-                <?php
+            ?></p>
+            <h3><?php
                 echo $player2[0][1] + $player2[1][1];
-                ?>
-            </h3>
+            ?></h3>
         </div>
     </section>
     <section>
-        <h3>
-            <?php
+        <h3><?php
             if ($player1[0][1] + $player1[1][1] === $player2[0][1] + $player2[1][1]) {
                 echo "Draw!";
             } elseif ($player1[0][1] + $player1[1][1] > $player2[0][1] + $player2[1][1]) {
@@ -78,8 +73,7 @@
             } else {
                 echo "Player two wins!";
             }
-            ?>
-        </h3>
+            ?></h3>
     </section>
 </main>
 

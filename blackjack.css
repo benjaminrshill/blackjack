@@ -1,14 +1,13 @@
-* {
-    margin: auto;
-}
 body {
-    background-color: blue;
+    background-color: #111;
     font-family: Courier, Helvetica, Arial;
     color: #ddd;
     text-align: center;
 }
 main {
+    margin: auto;
     width: 500px;
+    height: 500px;
 }
 .cols {
     display: flex;
