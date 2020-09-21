@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+    font-family: Courier, Helvetica, Arial;
+    color: #ddd;
+    text-align: center;
+}
+.cols {
+    display: flex;
+    justify-content: space-evenly;
+}
+.cols div {
+    width: 200px;
+}
