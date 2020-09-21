@@ -1,13 +1,16 @@
+* {
+    margin: auto;
+}
 body {
-    background-color: black;
+    background-color: blue;
     font-family: Courier, Helvetica, Arial;
     color: #ddd;
     text-align: center;
 }
+main {
+    width: 500px;
+}
 .cols {
     display: flex;
     justify-content: space-evenly;
-}
-.cols div {
-    width: 200px;
 }

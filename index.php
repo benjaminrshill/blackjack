@@ -42,6 +42,7 @@
 
     ?>
 
+<main>
     <h2>Blackjack</h2>
     <section class="cols">
         <div>
@@ -80,6 +81,7 @@
             ?>
         </h3>
     </section>
+</main>
 
 </body>
 </html>
