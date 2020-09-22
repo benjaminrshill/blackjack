@@ -7,39 +7,26 @@
 <body>
 
     <?php
-
         function createDeck() {
-
             $ranks = [ ['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8], ['9', 9], ['10', 10], ['J', 10], ['Q', 10], ['K', 10], ['A', 11] ];
             $suits = ['♥', '♣', '♦', '♠'];
             $pack = [];
-
             for ($i = 0; $i < 4; $i++) {
                 array_push($pack, $ranks);
                 for ($j = 0; $j < 13; $j++) {
                     array_push($pack[$i][$j], $suits[$i]);
                 }
             }
-
-            for ($i = 0; $i < 4; $i++) {
-                shuffle($pack[$i]);
-            }
-
-            return define('PACK', $pack);
-
+            $fullPack = array_merge($pack[0], $pack[1], $pack[2], $pack[3]);
+            shuffle($fullPack);
+            return $fullPack;
         }
-
-        createDeck();
-
-        $fullPack = PACK;
-
+        $fullPack = createDeck();
         function drawCard(&$fullPack) {
-            return array_pop($fullPack[rand(0,3)]);
+            return array_pop($fullPack);
         }
-
         $player1 = [drawCard($fullPack), drawCard($fullPack)];
         $player2 = [drawCard($fullPack), drawCard($fullPack)];
-
     ?>
 
 <main>
