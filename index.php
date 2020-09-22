@@ -22,11 +22,8 @@
             return $fullPack;
         }
         $fullPack = createDeck();
-        function drawCard(&$fullPack) {
-            return array_pop($fullPack);
-        }
-        $player1 = [drawCard($fullPack), drawCard($fullPack)];
-        $player2 = [drawCard($fullPack), drawCard($fullPack)];
+        $player1 = [array_pop($fullPack), array_pop($fullPack)];
+        $player2 = [array_pop($fullPack), array_pop($fullPack)];
     ?>
 
 <main>
