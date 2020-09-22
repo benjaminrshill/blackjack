@@ -7,19 +7,22 @@
 <body>
 
 <?php
-    $ranks = [ ['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8], ['9', 9], ['10', 10], ['J', 10], ['Q', 10], ['K', 10], ['A', 11] ];
-    $suits = ['♥', '♣', '♦', '♠'];
-    $pack = [];
-    for ($i = 0; $i < 4; $i++) {
-        array_push($pack, $ranks);
-        for ($j = 0; $j < 13; $j++) {
-            array_push($pack[$i][$j], $suits[$i]);
+    function createDeck() {
+        $ranks = [['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8], ['9', 9], ['10', 10], ['J', 10], ['Q', 10], ['K', 10], ['A', 11]];
+        $suits = ['♥', '♣', '♦', '♠'];
+        $newPack = [];
+        for ($i = 0; $i < 4; $i++) {
+            array_push($newPack, $ranks);
+            for ($j = 0; $j < 13; $j++) {
+                array_push($newPack[$i][$j], $suits[$i]);
+            }
         }
+        return $fullPack = array_merge($newPack[0], $newPack[1], $newPack[2], $newPack[3]);
     }
-    $fullPack = array_merge($pack[0], $pack[1], $pack[2], $pack[3]);
-    shuffle($fullPack);
-    $player1 = [array_pop($fullPack), array_pop($fullPack)];
-    $player2 = [array_pop($fullPack), array_pop($fullPack)];
+    $pack = createDeck();
+    shuffle($pack);
+    $player1 = [array_pop($pack), array_pop($pack)];
+    $player2 = [array_pop($pack), array_pop($pack)];
 ?>
 
 <main>
