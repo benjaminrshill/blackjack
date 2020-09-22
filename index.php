@@ -17,7 +17,7 @@
                 array_push($newPack[$i][$j], $suits[$i]);
             }
         }
-        return $fullPack = array_merge($newPack[0], $newPack[1], $newPack[2], $newPack[3]);
+        return array_merge($newPack[0], $newPack[1], $newPack[2], $newPack[3]);
     }
     $pack = createDeck();
     shuffle($pack);
