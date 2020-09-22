@@ -25,13 +25,11 @@
                 shuffle($pack[$i]);
             }
 
-            return define('PACK', $pack);
+            return $pack;
 
         }
 
-        createDeck();
-
-        $fullPack = PACK;
+        $fullPack = createDeck();
 
         function drawCard(&$fullPack) {
             return array_pop($fullPack[rand(0,3)]);
