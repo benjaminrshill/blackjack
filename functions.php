@@ -39,8 +39,8 @@ function playerScore($player) {
 /**
  * Calculates a winner
  *
- * @param   array   player1
- * @param   array   player2
+ * @param   array   player1Score
+ * @param   array   player2Score
  * @return  string
  */
 function whoWins($player1Score, $player2Score) {
@@ -57,12 +57,12 @@ function whoWins($player1Score, $player2Score) {
     }
 }
 
-// Create deck, shuffle pack, deal 2 cards to each player
+// Create deck, shuffle pack, deal 2 cards to each player, calculate scores
 $pack = createDeck();
 shuffle($pack);
 $player1 = [array_pop($pack), array_pop($pack)];
 $player2 = [array_pop($pack), array_pop($pack)];
-$player1Score = $player1[0]['value'] + $player1[1]['value'];
-$player2Score = $player2[0]['value'] + $player2[1]['value'];
+$player1Score = playerScore($player1);
+$player2Score = playerScore($player2);
 
 ?>
