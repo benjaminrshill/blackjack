@@ -43,15 +43,13 @@ function playerScore($player) {
  * @param   array   player2
  * @return  string
  */
-function whoWins($player1, $player2) {
-    $player1Score = $player1[0]['value'] + $player1[1]['value'];
-    $player2Score = $player2[0]['value'] + $player2[1]['value'];
-    if ($player1Score === $player2Score) {
-        return "Draw!";
-    } elseif ($player1Score > 21 || $player2Score > 21) {
+function whoWins($player1Score, $player2Score) {
+    if ($player1Score > 21 || $player2Score > 21) {
         return ($player1Score > 21 && $player2Score > 21 ? "Both bust!"
             : ($player1Score > 21 ? "Player one bust! Two wins!"
                 : "Player two bust! One wins!"));
+    } elseif ($player1Score === $player2Score) {
+        return "Draw!";
     } elseif ($player1Score > $player2Score) {
         return "Player one wins!";
     } else {
@@ -64,5 +62,7 @@ $pack = createDeck();
 shuffle($pack);
 $player1 = [array_pop($pack), array_pop($pack)];
 $player2 = [array_pop($pack), array_pop($pack)];
+$player1Score = $player1[0]['value'] + $player1[1]['value'];
+$player2Score = $player2[0]['value'] + $player2[1]['value'];
 
 ?>

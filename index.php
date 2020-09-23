@@ -21,7 +21,7 @@
         </div>
     </section>
     <section>
-        <h3><?php echo whoWins($player1, $player2); ?></h3>
+        <h3><?php echo whoWins($player1Score, $player2Score); ?></h3>
     </section>
 </main>
 </body>
