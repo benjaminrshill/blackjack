@@ -11,11 +11,13 @@
     <section class="cols">
         <div>
             <h4>Player 1</h4>
-            <?php echo playerScore($player1); ?>
+            <p><?php echo playerCards($player1); ?></p>
+            <h3><?php echo playerScore($player1); ?></h3>
         </div>
         <div>
             <h4>Player 2</h4>
-            <?php echo playerScore($player2); ?>
+            <p><?php echo playerCards($player2); ?></p>
+            <h3><?php echo playerScore($player2); ?></h3>
         </div>
     </section>
     <section>
