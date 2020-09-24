@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Creates a deck of 52 cards
+ * Create a deck of 52 cards
  *
  * @return array
  */
-function createDeck() {
+function createDeck() : array {
     $ranks = [['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8], ['9', 9], ['10', 10], ['J', 10], ['Q', 10], ['K', 10], ['A', 11]];
-    $suits = ['♠', '♥', '♦', '♣'];
+    $suits = ['<span class="black">♠</span>', '<span class="red">♥</span>', '<span class="red">♦</span>', '<span class="black">♣</span>'];
     foreach ($suits as $suit) {
         foreach ($ranks as $rank) {
             $newPack[] = array('rank'=>$rank[0], 'value'=>$rank[1], 'suit'=>$suit);
@@ -17,33 +17,33 @@ function createDeck() {
 }
 
 /**
- * Takes a player's cards and concatenates suit and rank
+ * Take a player's cards, concatenate suit and rank, return cards (e.g. clubs 5, hearts King)
  *
  * @param   array   player
  * @return  string
  */
-function playerCards($player) {
-    return $player[0]['suit'] . $player[0]['rank'] . ' ' . $player[1]['suit'] . $player[1]['rank'];
+function playerCards(array $player) : string {
+    return '<span>' . $player[0]['suit'] . $player[0]['rank'] . '</span> <span>' . $player[1]['suit'] . $player[1]['rank'] . '</span>';
 }
 
 /**
- * Takes a player's cards and calculates their score
+ * Take a player's cards and calculate their score
  *
  * @param   array   player
- * @return  integer
+ * @return  int
  */
-function playerScore($player) {
+function playerScore(array $player) : int {
     return $player[0]['value'] + $player[1]['value'];
 }
 
 /**
- * Calculates a winner
+ * Compare players' scores and calculate bust, draw, or win
  *
- * @param   array   player1Score
- * @param   array   player2Score
+ * @param   int     player1Score
+ * @param   int     player2Score
  * @return  string
  */
-function whoWins($player1Score, $player2Score) {
+function whoWins(int $player1Score, int $player2Score) : string {
     if ($player1Score > 21 || $player2Score > 21) {
         return ($player1Score > 21 && $player2Score > 21 ? "Both bust!"
             : ($player1Score > 21 ? "Player one bust! Two wins!"

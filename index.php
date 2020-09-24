@@ -7,21 +7,21 @@
 <body>
 <?php require 'functions.php' ?>
 <main>
-    <h2>Blackjack</h2>
+    <header>Blackjack</header>
     <section class="cols">
         <div>
             <h4>Player 1</h4>
-            <p><?php echo playerCards($player1); ?></p>
-            <h3><?php echo playerScore($player1); ?></h3>
+            <h2><?php echo playerCards($player1); ?></h2>
+            <h1><span><?php echo playerScore($player1); ?></span></h1>
         </div>
         <div>
             <h4>Player 2</h4>
-            <p><?php echo playerCards($player2); ?></p>
-            <h3><?php echo playerScore($player2); ?></h3>
+            <h2><?php echo playerCards($player2); ?></h2>
+            <h1><span><?php echo playerScore($player2); ?></span></h1>
         </div>
     </section>
     <section>
-        <h3><?php echo whoWins($player1Score, $player2Score); ?></h3>
+        <h5><?php echo whoWins($player1Score, $player2Score); ?></h5>
     </section>
 </main>
 </body>
